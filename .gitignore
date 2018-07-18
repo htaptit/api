@@ -1,0 +1,3 @@
+node_modules/
+data/test/full-R23-*
+.DS_Store
