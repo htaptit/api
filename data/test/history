@@ -1,0 +1,107 @@
+admin.nodeInfo
+admin.peers
+debug.dumpBlock('0x0')
+personal.listAccounts
+eth.getBlock(0)
+buyer = "5700fa0f3cabf3fff8d4826dde8f71526ed1b288"
+dealer = "88dda2d23a7cfc22a7fd603bc82dd739bf66ba92"
+eth.sendTransaction({from: buyer, to: dealer, value: web3.toWei(1, "ether")})
+eth.pendingTransactions
+txpool.inspect
+function showBalances() {
+  var i = 0;
+  eth.accounts.forEach(function(e) {
+     console.log("---> eth.accounts["+i+"]: " + e + " \tbalance: " + web3.fromWei(eth.getBalance(e), "ether") + " ether");
+     i++;
+  })
+};
+howBalances()
+showBalances()
+miner.start(1)
+txpool.inspect
+miner.start(10)
+txpool.inspect
+miner.stop()
+eth.getTransaction("0x0b1612d294f934a9c2375b8c07f330133ce9aadb7d2c37c6cf8cbdaf16149cf5")
+showBalances()
+eth.pendingTransactions
+eth.hashrate
+miner.start(1)
+eth.hashrate
+eth.getTransactionFromBlock(1)
+eth.hashrate
+txpool.inspect
+miner.stop()
+miner.start(100)
+eth.hashrate
+miner.stop()
+eth.hashrate
+txpool.inspect
+eth.coinbase
+eth.coinbas
+txpool.inspect
+eth.coinbase
+eth.hashrate
+txpool.inspect
+eth.coinbase
+eth.hashrate
+miner.start(10)
+eth.coinbase
+eth.hashrate
+miner.stop()
+eth.hashrate
+txpool.inspect
+eth.getTransactionFromBlock(1)
+eth.pendingTransactions
+showBalances()
+miner.start(1)
+eth.pendingTransactions
+miner.stop()
+txpool.inspect
+personal.listAccounts
+miner.start(1)
+txpool.inspect
+1
+txpool.inspect
+personal.listAccounts
+eth.getBlock('latest')
+eth.getBlock(1)
+eth.getTransactionFromBlock(1)
+9 - web3.fromWei(378000000000000)
+eth.sendTransaction({from: buyer, to: dealer, value: web3.toWei(1, "ether")})
+eth.sendTransaction({from: "0x5700fa0f3cabf3fff8d4826dde8f71526ed1b288", to: "0x88dda2d23a7cfc22a7fd603bc82dd739bf66ba92", value: web3.toWei(1, "ether")})
+eth.sendTransaction({from: buyer, to: dealer, value: web3.toWei(1, "ether")})
+eth.sendTransaction({from: "0x5700fa0f3cabf3fff8d4826dde8f71526ed1b288", to: "0x88dda2d23a7cfc22a7fd603bc82dd739bf66ba92", value: web3.toWei(1, "ether")})
+eth.getTransactionFromBlock(1)
+txpool.inspect
+function showBalances() {
+  var i = 0;
+  eth.accounts.forEach(function(e) {
+     console.log("---> eth.accounts["+i+"]: " + e + " \tbalance: " + web3.fromWei(eth.getBalance(e), "ether") + " ether");
+     i++;
+  })
+};
+showBalances()
+eth.sendTransaction({from: "0x5700fa0f3cabf3fff8d4826dde8f71526ed1b288", to: "0x88dda2d23a7cfc22a7fd603bc82dd739bf66ba92", value: web3.toWei(1, "ether")})
+4.997011748 - web3.fromWei(378000000000000)
+txpool.inspect
+showBalances()
+txpool.inspect
+showBalances()
+txpool.inspect
+showBalances()
+txpool.inspect
+showBalances()
+txpool.inspect
+eth.getPendingTransactions
+eth.getPendingTransactions()
+eth.getBlock("pending", true).transactions
+eth.getBlock("pending", true)
+eth.getBlock("pending", true).transactions
+eth.filter("pending").watch(function(error, result) {console.log(result)});
+eth.getPendingTransactions()
+eth.getPendingTransactions(function(error, result) {console.log(result)})
+eth.getBlock("pending", true).transactions
+personal.listAccounts
+miner.start(1)
+eth.hashrate
