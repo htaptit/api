@@ -293,11 +293,17 @@ app.post('/sendTransaction', function(req, res) {
     });
 });
 
-app.post('/getBalance', function(req, res) {
+app.get('/getBalance', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+
     const address = req.query.address;
+
     web3.eth.getBalance(address)
     .then(result => {
-        res.send(result);
+        res.send({balance: result});
     });
 });
 
@@ -318,15 +324,13 @@ app.post('/newAccount', function(req, res) {
     const type = parseInt(req.query.type);
     const created_at = formatted;
 
-
-
     web3.eth.personal.newAccount(password)
     .then(result => {
         var values = {
             name: name,
             email: email,
             type: type,
-            created_at: created_at,
+            datetime: created_at,
             address: result
         }
         var rs = result;
@@ -347,27 +351,7 @@ app.get('/accounts', function(req, res) {
     var type = parseInt(req.query.type);
 
     con.query("SELECT * FROM users WHERE email = ? AND type = ?", [email, type], function (err, result) {
-        if (err) throw err;
-        var accounts = result;
-        var totalBalance = 0;
-
-        function asyncFunction (item, cb) {
-          setTimeout(() => {
-            web3.eth.getBalance(item.address)
-            .then(result => {
-                console.log(result);
-            });
-            cb();
-          }, 100);
-        }
-
-        let requests = accounts.map((account) => {
-            return new Promise((resolve) => {
-              asyncFunction(account, resolve);
-            });
-        })
-
-        Promise.all(requests).then(() => console.log('done'));
+        res.send({accounts: result});
     });
 });
 
