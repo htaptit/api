@@ -5,6 +5,7 @@ var Web3 = require('web3');
 var solc = require('solc');
 var util = require('util');
 var mysql = require('mysql');
+var Promise = require('bluebird');
 
 let vin = '1234567890';
 let cost = 1000000000000000000;
@@ -239,6 +240,15 @@ app.use(function(req, res, next) {
 
 app.use(express.static('./static'));
 
+function isEmpty(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return JSON.stringify(obj) === JSON.stringify({});
+}
+
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -248,7 +258,7 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
   if (err) throw err;
-  console.log("Connected!!!")
+  console.log("DB is connected!!!")
 });
 
 app.get('/init', function(req, res) {
@@ -292,11 +302,15 @@ app.post('/getBalance', function(req, res) {
 });
 
 app.post('/newAccount', function(req, res) {
-    console.log(req.query);
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+
     var dateTime = require('node-datetime');
 
     var dt = dateTime.create();
-    var formatted = dt.format('Y-m-d');
+    var formatted = dt.format('Y-m-d H:m');
 
     const name = req.query.name;
     const email = req.query.email;
@@ -315,21 +329,66 @@ app.post('/newAccount', function(req, res) {
             created_at: created_at,
             address: result
         }
-
+        var rs = result;
         con.query("INSERT INTO users SET ?", values, function (err, result) {
             if (err) throw err;
-            res.send(result);
+            res.send( {account: rs} );
         });
     });
 });
 
 app.get('/accounts', function(req, res) {
-    con.query("SELECT * FROM users WHERE email = ? AND type = ?", ['htaptit@gmail.com', 1], function (err, result) {
-            if (err) throw err;
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+    var totalBalance = 0;
+    var email = req.query.email;
+    var type = parseInt(req.query.type);
+
+    con.query("SELECT * FROM users WHERE email = ? AND type = ?", [email, type], function (err, result) {
+        if (err) throw err;
+        var accounts = result;
+        var totalBalance = 0;
+
+        function asyncFunction (item, cb) {
+          setTimeout(() => {
+            web3.eth.getBalance(item.address)
+            .then(result => {
+                console.log(result);
+            });
+            cb();
+          }, 100);
+        }
+
+        let requests = accounts.map((account) => {
+            return new Promise((resolve) => {
+              asyncFunction(account, resolve);
+            });
+        })
+
+        Promise.all(requests).then(() => console.log('done'));
+    });
+});
+
+app.get('/totalAccount', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+
+    var email = req.query.email;
+    var type = parseInt(req.query.type);
+
+    con.query("SELECT COUNT(*) AS total FROM users WHERE email = ? AND type = ?", [email, type], function (err, result) {
+            if (err) {
+                res.send({error: "Query !", message: err.stack});
+                return;
+            }
+
             res.send(result);
     });
-})
-
+});
 
 app.listen(9001);
 
