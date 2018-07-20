@@ -276,20 +276,38 @@ app.post('/payment', function(req, res) {
 app.post('/sendTransaction', function(req, res) {
     const from = req.query.from;
     const to = req.query.to;
+    const password = req.query.password;
     const value = web3.utils.toWei(req.query.value, 'ether');
 
     util.log(`>>>>> contractApi - Unlocking ${req.query.from} account`);
 
-    web3.eth.personal.unlockAccount(from, 'buyer')
+    web3.eth.personal.unlockAccount(from, password)
     .then(result => {
         util.log(`>>>>> contractApi - Is dealer account unlocked ? ${result}`);
 
         web3.eth.sendTransaction({from, to, value})
         .then(result => {
-            console.log(result);
-            res.send(result);
+            res.send({unlock: true, infoTransaction: result});
         });
 
+    })
+    .catch(error => {
+            res.send({ unlock: false, infoTransaction: null });
+            return;
+    });
+});
+
+app.get('/getTransactionCount', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+
+    const address = req.query.address;
+
+    web3.eth.getTransactionCount(address)
+    .then(result => {
+        res.send({transactionCount: result});
     });
 });
 
