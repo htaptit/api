@@ -325,6 +325,30 @@ app.get('/getBalance', function(req, res) {
     });
 });
 
+app.post('/unlockAccount', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+
+    const address = req.query.address;
+    const password = req.query.password;
+    web3.eth.personal.unlockAccount(address, password)
+    .then(result => {
+        util.log(`>>>>> contractApi - Is ${address} account unlocked ? ${result}`);
+
+        web3.eth.sendTransaction({from, to, value})
+        .then(result => {
+            res.send({unlock: true});
+        });
+
+    })
+    .catch(error => {
+            res.send({unlock: false});
+            return;
+    });
+});
+
 app.post('/newAccount', function(req, res) {
     if (isEmpty(req.query)) {
         res.send({error: "Not found !", message: "Vui long them tham so !"});
@@ -332,7 +356,6 @@ app.post('/newAccount', function(req, res) {
     }
 
     var dateTime = require('node-datetime');
-
     var dt = dateTime.create();
     var formatted = dt.format('Y-m-d H:m');
 
