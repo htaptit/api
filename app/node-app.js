@@ -355,15 +355,15 @@ app.post('/newAccount', function(req, res) {
         return;
     }
 
-    var dateTime = require('node-datetime');
-    var dt = dateTime.create();
-    var formatted = dt.format('Y-m-d H:m');
+    var moment = require('moment');
+    var localTime  = moment.utc(moment.utc().format('YYYY-MM-DD HH:mm:ss')).toDate();
+    localTime = moment(localTime).format('YYYY-MM-DD HH:mm:ss');
 
     const name = req.query.name;
     const email = req.query.email;
     const password = req.query.password;
     const type = parseInt(req.query.type);
-    const created_at = formatted;
+    const created_at = localTime;
 
     web3.eth.personal.newAccount(password)
     .then(result => {
