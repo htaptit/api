@@ -277,7 +277,7 @@ app.post('/sendTransaction', function(req, res) {
     const from = req.query.from;
     const to = req.query.to;
     const password = req.query.password;
-    const value = web3.utils.toWei(req.query.value, 'ether');
+    const value = web3.utils.toWei(req.query.value.replace(',', '.'), 'ether');
 
     util.log(`>>>>> contractApi - Unlocking ${req.query.from} account`);
 
@@ -287,6 +287,7 @@ app.post('/sendTransaction', function(req, res) {
 
         web3.eth.sendTransaction({from, to, value})
         .then(result => {
+            console.log(result)
             res.send({unlock: true, infoTransaction: result});
         });
 
@@ -321,8 +322,20 @@ app.get('/getBalance', function(req, res) {
 
     web3.eth.getBalance(address)
     .then(result => {
-        res.send({balance: result});
+        res.send({balance: web3.utils.fromWei(result, 'ether')});
     });
+});
+
+app.get('/checkIsAddress', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+
+    const address = req.query.address;
+
+    const result = web3.utils.isAddress(address)
+    res.send({isAddress: result});
 });
 
 app.post('/unlockAccount', function(req, res) {
