@@ -336,16 +336,11 @@ app.post('/unlockAccount', function(req, res) {
     web3.eth.personal.unlockAccount(address, password)
     .then(result => {
         util.log(`>>>>> contractApi - Is ${address} account unlocked ? ${result}`);
-
-        web3.eth.sendTransaction({from, to, value})
-        .then(result => {
-            res.send({unlock: true});
-        });
-
+        res.send({unlock: result});
     })
     .catch(error => {
-            res.send({unlock: false});
-            return;
+        res.send({unlock: false});
+        return;
     });
 });
 
