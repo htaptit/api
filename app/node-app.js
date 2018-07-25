@@ -273,6 +273,37 @@ app.post('/payment', function(req, res) {
     paymentApi(req, res);
 });
 
+function saveTransactionToDatabase(transactionHash, from, value, to) {
+    // get account by from address (from)
+    con.query("SELECT * FROM users WHERE address = ? LIMIT 1", [from], function (err, result) {
+            if (err) throw err;
+            
+            var moment = require('moment');
+            var localTime  = moment.utc(moment.utc().format('YYYY-MM-DD HH:mm:ss')).toDate();
+            localTime = moment(localTime).format('YYYY-MM-DD HH:mm:ss');
+
+            var _result = result;
+
+            // get account by from address (to)
+            con.query("SELECT * FROM users WHERE address = ? LIMIT 1", [to], function (err, result) {
+                var values = {
+                    name: _result[0].name,
+                    email: _result[0].email,
+                    type: _result[0].type,
+                    created_at: localTime,
+                    transaction_hash: transactionHash,
+                    value: value,
+                    to_address: result[0].name
+                 }
+                // save to database
+                con.query("INSERT INTO transaction SET ?", values, function (err, result) {
+                    if (err) throw err;
+                    console.log(result)
+                });
+            });
+    });
+};
+
 app.post('/sendTransaction', function(req, res) {
     const from = req.query.from;
     const to = req.query.to;
@@ -287,7 +318,8 @@ app.post('/sendTransaction', function(req, res) {
 
         web3.eth.sendTransaction({from, to, value})
         .then(result => {
-            console.log(result)
+            saveTransactionToDatabase(result.transactionHash, from, value, to);
+
             res.send({unlock: true, infoTransaction: result});
         });
 
@@ -297,6 +329,32 @@ app.post('/sendTransaction', function(req, res) {
             return;
     });
 });
+
+app.get('/transactionHistory', function(req, res) {
+    const email = req.query.email;
+    const type = parseInt(req.query.type);
+
+    con.query("SELECT * FROM transaction WHERE email = ? AND type = ?", [email, type], function (err, result) {
+        res.send({history: result});
+    });
+});
+
+app.get('/getTransaction', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+    const hash = req.query.hash;
+
+    web3.eth.getTransaction(hash)
+    .then(result => {
+        res.send({transaction: result});
+    })
+    .catch(error => {
+        res.send({transaction: null});
+    })
+});
+
 
 app.get('/getTransactionCount', function(req, res) {
     if (isEmpty(req.query)) {
