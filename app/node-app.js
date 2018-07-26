@@ -305,6 +305,10 @@ function saveTransactionToDatabase(transactionHash, from, value, to) {
 };
 
 app.post('/sendTransaction', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
     const from = req.query.from;
     const to = req.query.to;
     const password = req.query.password;
@@ -331,11 +335,90 @@ app.post('/sendTransaction', function(req, res) {
 });
 
 app.get('/transactionHistory', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
     const email = req.query.email;
     const type = parseInt(req.query.type);
 
     con.query("SELECT * FROM transaction WHERE email = ? AND type = ?", [email, type], function (err, result) {
         res.send({history: result});
+    });
+});
+
+
+app.get('/getEmailByName', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+    const name = req.query.name;
+
+    con.query("SELECT * FROM users WHERE email = ? LIMIT 1", [name], function (err, result) {
+        res.send({email: result[0].email, type: result[0].type});
+    });
+});
+
+app.get('/getEmailByAddress', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+    const address = req.query.address;
+
+    con.query("SELECT * FROM users WHERE address = ? LIMIT 1", [address], function (err, result) {
+        res.send({email: result[0].email, type: result[0].type, name: result[0].name});
+    });
+});
+
+app.get('/getNameByAddress', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+    const address = req.query.address;
+
+    con.query("SELECT * FROM users WHERE address = ? LIMIT 1", [address], function (err, result) {
+        res.send({name: result[0].name});
+    });
+});
+
+app.get('/getContacts', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+    const email = req.query.email;
+    const type = parseInt(req.query.type);
+
+console.log(req.query)
+
+    con.query("SELECT * FROM contact WHERE email = ? AND type = ?", [email, type], function (err, result) {
+        console.log(result);
+        res.send({constacts: result});
+    });
+});
+
+app.post('/newContacts', function(req, res) {
+    if (isEmpty(req.query)) {
+        res.send({error: "Not found !", message: "Vui long them tham so !"});
+        return;
+    }
+    const email = req.query.email;
+    const type = parseInt(req.query.type);
+    const address = req.query.address;
+    
+    var values = {
+        address: address,
+        email: email,
+        type: type
+     }
+
+    // save to database
+    con.query("INSERT INTO contact SET ?", values, function (err, result) {
+        if (err) throw err;
+        res.send({saved: true});
     });
 });
 
