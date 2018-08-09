@@ -1,9 +1,9 @@
-![FMPhotoPicker](/resources/FMImageView.jpg)
+![FMImageView](/resources/FMImageView.jpg)
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-FMPhotoPicker is a modern, simple and zero-dependency photo picker with an image editor written in Swift for iOS
+FMImageView is a photos viewer written in Swift for iOS
 
 ## Features
 - [x] Supports preview images by URL or UIImage
@@ -47,7 +47,7 @@ fmImageVC.view.frame = UIScreen.main.bounds
 self.present(fmImageVC, animated: true)
 ```
 
-## Callback methods
+### Callback
 - Implement callback to handle location of images  
 ```
 fmImageVC.didMoveToViewControllerHandler = { index in
@@ -68,7 +68,7 @@ Type: `HorizontalStackView`
 Default: `nil`
 Default height: `40.0`
 
-## Apps using FMPhotoPicker
+## Apps using FMImageView
 <a href="https://funmee.jp"><img src="resources/funmee.png" width="100"></a>
 
 ## Author
