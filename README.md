@@ -14,7 +14,7 @@ FMImageView is a photos viewer written in Swift for iOS
 
 ## Installation
 
-Insert the following line in your Carthfile:
+Insert the following line in your Cartfile:
 ```
 git "git@github.com:tribalmedia/FMImageView.git"
 ```
@@ -36,11 +36,10 @@ or
 
 var datasource = FMImageDataSource(images: [UIImage])
 ```
-For details, see [Configuration](#imagedatasource)
 
 ### Preview
 ```
-let fmImageVC = FMImageSlideViewController(config: config)
+let fmImageVC = FMImageSlideViewController(datasource: datasource, config: config)
 
 fmImageVC.view.frame = UIScreen.main.bounds
 
