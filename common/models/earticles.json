@@ -1,0 +1,47 @@
+{
+  "name": "earticles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "author": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "index": {
+        "unique": true
+      }
+    },
+    "urlToImage": {
+      "type": "string"
+    },
+    "publishedAt": {
+      "type": "date"
+    },
+    "content": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "sources": {
+      "type": "belongsTo",
+      "model": "sources",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

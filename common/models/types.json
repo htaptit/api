@@ -1,0 +1,28 @@
+{
+  "name": "types",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "sources": {
+      "type": "hasMany",
+      "model": "sources",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "sources"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

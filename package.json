@@ -1,0 +1,40 @@
+{
+  "name": "wordwide",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "fb": "^2.0.0",
+    "helmet": "^3.10.0",
+    "loopback": "^3.19.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.0.0",
+    "loopback-connector-mysql": "^2.4.1",
+    "newsapi": "^2.4.0",
+    "node-cron": "^2.0.1",
+    "serve-favicon": "^2.0.1",
+    "sleep": "^5.2.3",
+    "strong-error-handler": "^3.0.0",
+    "system-sleep": "^1.3.6",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "wordwide"
+}

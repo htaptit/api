@@ -1,0 +1,57 @@
+{
+  "name": "twaccounts",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "screen_name": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "followers_count": {
+      "type": "number",
+      "required": true
+    },
+    "friends_count": {
+      "type": "number",
+      "required": true
+    },
+    "lang": {
+      "type": "string"
+    },
+    "statuses_count": {
+      "type": "number",
+      "required": true
+    },
+    "banner_image_url": {
+      "type": "string"
+    },
+    "profile_image_url": {
+      "type": "string"
+    },
+    "profile_background_color": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

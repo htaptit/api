@@ -1,0 +1,49 @@
+{
+  "name": "sources",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "sid": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "sname": {
+      "type": "string",
+      "required": true
+    },
+    "home_url": {
+      "type": "string"
+    },
+    "fav_icon_url": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "types": {
+      "type": "belongsTo",
+      "model": "types",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "earticles": {
+      "type": "hasMany",
+      "model": "earticles",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "earticles"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

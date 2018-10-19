@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "wordwide": {
+    "host": "localhost",
+    "port": 3306,
+    "url": " mysql://root:@localhost/wordwide",
+    "database": "wordwide",
+    "password": "",
+    "name": "wordwide",
+    "user": "root",
+    "connector": "mysql"
+  }
+}
