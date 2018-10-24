@@ -14,9 +14,11 @@
 - _Attention_: Chỉ xử lý các vấn đề trong phạm vi nội dung của Issues.
 #### 3. Commit and Push: ####
 - Commit : 
-  - Commit message : _message  #{issues_number}_
+  - Commit message : 
+  	`_message  #{issues_number}_`
   - Message: Cần diễn tả khớp với các nội dung đã sửa ở (2)
-  - Example: _message #1_
+  - Example: 
+  	`_fix bug #1_`
 - Push code.
   * Attention:
     + Kiểm tra lại trước khi push code: 
@@ -27,9 +29,9 @@
 - PR exists: Move to step (5)
 - Chưa tồn tại: Create PR and move to step [`(5)`](#ref-bottom-view)
   - Nội dung của PR gồm 3 phần chính
-    * Change
-    * Related issues
-    * Release notes
+    - [x] Change
+    - [x] Related issues
+    - [x] Release notes
 			
 #### 5. Request Review. ####
 - Dissmiss : Xem nội dung được feedback and back to step (1)
