@@ -31,7 +31,7 @@
     - [x] Related issues
     - [x] Release notes
 			
-#### 5. Request Review. #### <a name="ref-bottom-view">
+#### <a name='ref-bottom-view>. Request Review.
 - Dissmiss : Xem nội dung được feedback and back to step (1)
 - Approved (all member) : Move to step (III)
   
