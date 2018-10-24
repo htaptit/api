@@ -25,12 +25,13 @@
 			+ Unrelated files are not commit or push.
  #### 4. A Pull Request (PR) has been created ? ####
 	+ PR exists: Move to step (5)
-	+ Chưa tồn tại: Create PR and move to step (5)	
+	+ Chưa tồn tại: Create PR and move to step (5)(#ref-bottom-view)
 		Nội dung của PR gồm 3 phần chính
 			* Change
 			* Related issues
 			* Release notes
- #### 5. Request Review. ####
+			
+<a name="ref-bottom-view"></a> #### 5. Request Review. ####
 	+ Dissmiss : Xem nội dung được feedback and back to step (1)
 	+ Approved (all member) : Move to step (III)
   
