@@ -14,9 +14,9 @@
 - _Attention_: Chỉ xử lý các vấn đề trong phạm vi nội dung của Issues.
 #### 3. Commit and Push: ####
 - Commit : 
-  - Commit message : `_message  #{issues_number}_`
+  - Commit message : ```message  #{issues_number}```
   - Message: Cần diễn tả khớp với các nội dung đã sửa ở (2)
-  - Example: `_fix bug #1_`
+  - Example: ```fix bug #1```
 - Push code.
   * Attention:
     + Kiểm tra lại trước khi push code: 
