@@ -32,7 +32,7 @@
     - [x] Release notes
 			
 #### 5. Request Review<a name='5'>.
-- Dissmiss : Review content that be received feedback and back to step [`(2)`](#2)
+- Received feedback : Review content that be received feedback and back to step [`(2)`](#2)
 - Approved (all member) : Move to step [`(III)`](#iii)
   
 ## III. VN-Testing<a name='iii'>.
