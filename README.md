@@ -20,8 +20,8 @@
 	+ Push code.
 		* Attention : 
 			+ Kiểm tra lại trước khi push code: 
-				* Hoạt động bình thường
-				* Không bị liên quan đến phần khác
+				[x]Hoạt động bình thường
+				[x]Không bị liên quan đến phần khác
 			+ Unrelated files are not commit or push.
  #### 4. A Pull Request (PR) has been created ? ####
 	+ PR exists: Move to step (5)
@@ -31,7 +31,7 @@
 			* Related issues
 			* Release notes
 			
-<a name="ref-bottom-view"></a> #### 5. Request Review. ####
+#### 5. Request Review. ####
 	+ Dissmiss : Xem nội dung được feedback and back to step (1)
 	+ Approved (all member) : Move to step (III)
   
