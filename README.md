@@ -10,7 +10,7 @@
 #### 1. Create new branch ####
 - Name branch : i + issues_number
 - Example: i1, i2 … 
-#### 2. Coding. <a name='2'>
+#### 2. Coding<a name='2'>.
 - _Attention_: Chỉ xử lý các vấn đề trong phạm vi nội dung của Issues.
 #### 3. Commit and Push: ####
 - Commit : 
