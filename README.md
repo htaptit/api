@@ -1,5 +1,13 @@
+<p align="center">
+  <h1> Workflow of issues </h1><br>
+  <a href="#">Link 1</a> |
+  <a href="#">Link 2</a> |
+  <a href="#">Link 3</a>
+  <br><br>
+  <img src="https://user-images.githubusercontent.com/11253874/47194897-79a78b80-d383-11e8-95f2-28de24d3226f.png">
+</p>
+
 ![alt text](https://user-images.githubusercontent.com/11253874/47194897-79a78b80-d383-11e8-95f2-28de24d3226f.png)
-<p align="center"><h1> Workflow of issues </h1></p>
 
 ## I. Preparing ##
 - Create Todo.
