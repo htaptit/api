@@ -33,23 +33,23 @@
 			
 #### 5. Request Review<a name='5'>.
 - Dissmiss : Xem nội dung được feedback and back to step [`(2)`](#2)
-- Approved (all member) : Move to step (III)
+- Approved (all member) : Move to step [`(III)`](#iii)
   
-## III. VN-Testing ##
+## III. VN-Testing<a name='iii'>.
 - Test PR based Discussion:
   - Failed: Go back to step [`(II.2)`](#2)
-  - Passed: Move to step (IV)
+  - Passed: Move to step [`(IV)`](#iv)
     
-## IV. JP-Testing ##
+## IV. JP-Testing<a name='iv'>.
 - Test PR based Discussion:
   + Failed: Go back to step [`(II.2)`](#2)
-  + Passed: Move to step (V)
+  + Passed: Move to step [`(V)`](#v)
     
-## V. Ready For Release. ##
+## V. Ready For Release<a name='v'>.
 - Waiting for Release.  
 ## VI. Releasing. ##
 - Mark Label Version & Merge PR
 - Release
   
-## VII. Done. ##
+## VI. Done<a name='vi'>.
 - Close issues.
