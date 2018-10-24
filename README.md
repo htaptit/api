@@ -23,34 +23,33 @@
       - [x] Hoạt động bình thường không ?
       - [x] Có bị liên quan đến phần khác không ? 
     + Unrelated files are not commit or push.
- #### 4. A Pull Request (PR) has been created ? ####
-	+ PR exists: Move to step (5)
-	+ Chưa tồn tại: Create PR and move to step [`(5)`](#ref-bottom-view)
-		Nội dung của PR gồm 3 phần chính
-			* Change
-			* Related issues
-			* Release notes
+#### 4. A Pull Request (PR) has been created ? ####
+- PR exists: Move to step (5)
+- Chưa tồn tại: Create PR and move to step [`(5)`](#ref-bottom-view)
+  - Nội dung của PR gồm 3 phần chính
+    * Change
+    * Related issues
+    * Release notes
 			
 #### 5. Request Review. ####
-	+ Dissmiss : Xem nội dung được feedback and back to step (1)
-	+ Approved (all member) : Move to step (III)
+- Dissmiss : Xem nội dung được feedback and back to step (1)
+- Approved (all member) : Move to step (III)
   
 ## III. VN-Testing ##
-	- Test PR based Discussion:
-		+ Failed: Go back to step (II.1)
-		+ Passed: Move to step (IV)
+- Test PR based Discussion:
+  - Failed: Go back to step (II.1)
+  - Passed: Move to step (IV)
     
 ## IV. JP-Testing ##
-	- Test PR based Discussion:
-		+ Failed: Go back to step (II.1)
-		+ Passed: Move to step (V)
+- Test PR based Discussion:
+  + Failed: Go back to step (II.1)
+  + Passed: Move to step (V)
     
 ## V. Ready For Release. ##
-	- Waiting for Release.
-  
+- Waiting for Release.  
 ## VI. Releasing. ##
-	- Mark Label Version & Merge PR
-	- Release
+- Mark Label Version & Merge PR
+- Release
   
 ## VII. Done. ##
-	- Close issues.
+- Close issues.
