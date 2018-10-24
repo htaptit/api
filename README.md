@@ -37,12 +37,12 @@
   
 ## III. VN-Testing ##
 - Test PR based Discussion:
-  - Failed: Go back to step (II.1)
+  - Failed: Go back to step [`(II.2)`](#2)
   - Passed: Move to step (IV)
     
 ## IV. JP-Testing ##
 - Test PR based Discussion:
-  + Failed: Go back to step (II.1)
+  + Failed: Go back to step [`(II.2)`](#2)
   + Passed: Move to step (V)
     
 ## V. Ready For Release. ##
