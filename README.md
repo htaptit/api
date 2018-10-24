@@ -13,7 +13,7 @@
 - Name branch : ```i{issues_number}```
 - Example: ```i1, i2```
 #### 2. Coding<a name='2'>.
-- _Attention_: Only handle some problems within issues.
+- _Attention_: Only handle problems that fall within the scope of the issue.
 	
 #### 3. Commit and Push: ####
 - Commit : 
