@@ -1,5 +1,5 @@
 ![alt text](https://user-images.githubusercontent.com/11253874/47194897-79a78b80-d383-11e8-95f2-28de24d3226f.png)
-# Workflow of issues: #
+<p align="center"><h1> Workflow of issues </h1></p>
 
 ## I. Preparing ##
 - Create Todo.
