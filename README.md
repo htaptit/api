@@ -10,12 +10,12 @@
 #### 1. Create new branch ####
 - Name branch : i + issues_number
 - Example: i1, i2 … 
-#### 2. Coding. ####
+#### 2. Coding. <a name='2'>
 - _Attention_: Chỉ xử lý các vấn đề trong phạm vi nội dung của Issues.
 #### 3. Commit and Push: ####
 - Commit : 
   - Message : ```message  #{issues_number}```
-  - Content: Cần diễn tả khớp với các nội dung đã sửa ở (2)
+  - Content: Cần diễn tả khớp với các nội dung đã sửa ở [`(2)`](#2)
   - Example: ```fix bug #1```
 - Push code.
   * Attention:
@@ -24,15 +24,15 @@
       - [x] Có bị liên quan đến phần khác không ? 
     + Unrelated files are not commit or push.
 #### 4. A Pull Request (PR) has been created ? ####
-- PR exists: Move to step (5)
-- Chưa tồn tại: Create PR and move to step [`(5)`](#ref-bottom-view)
+- PR exists: Move to step [`(5)`](#5)
+- Chưa tồn tại: Create PR and move to step [`(5)`](#5)
   - Nội dung của PR gồm 3 phần chính
     - [x] Change
     - [x] Related issues
     - [x] Release notes
 			
-#### 5. Request Review <a name='ref-bottom-view'>.
-- Dissmiss : Xem nội dung được feedback and back to step (1)
+#### 5. Request Review <a name='5'>
+- Dissmiss : Xem nội dung được feedback and back to step [`(2)`](#2)
 - Approved (all member) : Move to step (III)
   
 ## III. VN-Testing ##
