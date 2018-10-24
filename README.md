@@ -8,31 +8,31 @@
  
 ## II. Processing ##
 #### 1. Create new branch ####
-- Name branch : i + issues_number
-- Example: i1, i2 … 
+- Name branch : ```i + issues_number```
+- Example: ```i1, i2 … ```
 #### 2. Coding<a name='2'>.
-- _Attention_: Chỉ xử lý các vấn đề trong phạm vi nội dung của Issues.
+- _Attention_: Only handle some problems within issues.
 #### 3. Commit and Push: ####
 - Commit : 
   - Message : ```message  #{issues_number}```
-  - Content: Cần diễn tả khớp với các nội dung đã sửa ở [`(2)`](#2)
+  - Content: Representation content must match with edited contents at [`(2)`](#2)
   - Example: ```fix bug #1```
 - Push code.
   * Attention:
-    + Kiểm tra lại trước khi push code: 
-      - [x] Hoạt động bình thường không ?
-      - [x] Có bị liên quan đến phần khác không ? 
+    + Recheck before push code 
+      - [x] Run normally or not? ?
+      - [x] Relate to other parts or not? 
     + Unrelated files are not commit or push.
 #### 4. A Pull Request (PR) has been created ? ####
-- PR exists: Move to step [`(5)`](#5)
-- Chưa tồn tại: Create PR and move to step [`(5)`](#5)
-  - Nội dung của PR gồm 3 phần chính
+- Existed yet: Move to step [`(5)`](#5)
+- Not existed yet: Create PR and move to step [`(5)`](#5)
+  - The content of PR consists of 3 main parts
     - [x] Change
     - [x] Related issues
     - [x] Release notes
 			
 #### 5. Request Review<a name='5'>.
-- Dissmiss : Xem nội dung được feedback and back to step [`(2)`](#2)
+- Dissmiss : Review content that be received feedback and back to step [`(2)`](#2)
 - Approved (all member) : Move to step [`(III)`](#iii)
   
 ## III. VN-Testing<a name='iii'>.
