@@ -20,7 +20,7 @@
 - Push code.
   * Attention:
     + Recheck before push code 
-      - [x] Run normally or not? ?
+      - [x] Run normally or not?
       - [x] Relate to other parts or not? 
     + Unrelated files are not commit or push.
 #### 4. A Pull Request (PR) has been created ? ####
@@ -47,6 +47,7 @@
     
 ## V. Ready For Release<a name='v'>.
 - Waiting for Release.  
+
 ## VI. Releasing. ##
 - Mark Label Version & Merge PR
 - Release
