@@ -2,26 +2,26 @@
 # Work follow Funmee: #
 
 ## I. Preparing ##
- - Create Todo.
- - Convert Todo to Issues.
- - Discuss and prepare the content of the issue.
+- Create Todo.
+- Convert Todo to Issues.
+- Discuss and prepare the content of the issue.
  
 ## II. Processing ##
 #### 1. Create new branch ####
-	- Name branch : i + issues_number
-	- Example: i1, i2 … 
+- Name branch : i + issues_number
+- Example: i1, i2 … 
 #### 2. Coding. ####
-	+ Chỉ xử lý các vấn đề trong phạm vi nội dung của Issues.
+- _Attention_: Chỉ xử lý các vấn đề trong phạm vi nội dung của Issues.
 #### 3. Commit and Push: ####
 - Commit : 
-  - Commit message : `message  #{issues_number}`
+  - Commit message : _message  #{issues_number}_
   - Message: Cần diễn tả khớp với các nội dung đã sửa ở (2)
-  - Example: “message #1”
+  - Example: _message #1_
 - Push code.
   * Attention:
     + Kiểm tra lại trước khi push code: 
-      - [x] Hoạt động bình thường
-      - [x] Không bị liên quan đến phần khác
+      - [x] Hoạt động bình thường không ?
+      - [x] Có bị liên quan đến phần khác không ? 
     + Unrelated files are not commit or push.
  #### 4. A Pull Request (PR) has been created ? ####
 	+ PR exists: Move to step (5)
