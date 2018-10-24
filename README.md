@@ -14,7 +14,7 @@
 	+ Chỉ xử lý các vấn đề trong phạm vi nội dung của Issues.
 #### 3. Commit and Push: ####
 - Commit : 
-  - Commit message : “message  #{issues_number}”
+  - Commit message : `message  #{issues_number}`
   - Message: Cần diễn tả khớp với các nội dung đã sửa ở (2)
   - Example: “message #1”
 - Push code.
