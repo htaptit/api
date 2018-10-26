@@ -1,3 +1,8 @@
 node_modules/
 package-lock.json
 .DS_Store
+._.DS_Store
+nohup.out
+npm-debug.log
+server/.env
+server/._.DS_Store
