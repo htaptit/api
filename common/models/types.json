@@ -18,9 +18,7 @@
       "model": "sources",
       "foreignKey": "",
       "options": {
-        "nestRemoting": true
-      },
-      "through": "sources"
+      }
     }
   },
   "acls": [
