@@ -3,14 +3,30 @@
     "name": "db",
     "connector": "memory"
   },
-  "wordwide": {
+  "ww_db": {
     "host": "localhost",
     "port": 3306,
-    "url": " mysql://root:@localhost/wordwide",
-    "database": "wordwide",
+    "url": "mysql://root:@localhost/ww_db",
+    "database": "ww_db",
     "password": "",
-    "name": "wordwide",
+    "name": "ww_db",
     "user": "root",
     "connector": "mysql"
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "port": 465,
+        "secure": true,
+        "auth": {
+          "user": "htaptit@gmail.com",
+          "pass": "Yentrinh2210"
+        }
+      }
+    ]
   }
 }

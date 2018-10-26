@@ -13,42 +13,54 @@
       "./mixins"
     ]
   },
+  "Email": {
+    "dataSource": "emailDs"
+  },
   "User": {
-    "dataSource": "db"
+    "dataSource": "ww_db",
+    "public": false
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "ww_db",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "ww_db",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "ww_db",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "ww_db",
     "public": false
   },
   "earticles": {
-    "dataSource": "wordwide",
+    "dataSource": "ww_db",
     "public": true
   },
   "twaccounts": {
-    "dataSource": "wordwide",
+    "dataSource": "ww_db",
     "public": true
   },
   "sources": {
-    "dataSource": "wordwide",
+    "dataSource": "ww_db",
     "public": true
   },
   "types": {
-    "dataSource": "wordwide",
+    "dataSource": "ww_db",
+    "public": true
+  },
+  "newsapi_access_token": {
+    "dataSource": "ww_db",
+    "public": true
+  },
+  "accounts": {
+    "dataSource": "ww_db",
     "public": true
   }
 }
