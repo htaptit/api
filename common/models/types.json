@@ -29,5 +29,6 @@
       "permission": "DENY"
     }
   ],
-  "methods": {}
+  "methods": {},
+  "hidden": ["id"]
 }

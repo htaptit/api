@@ -6,7 +6,8 @@
     "validateUpsert": true
   },
   "hidden": [
-    "sourcesId"
+    "sourcesId",
+    "id"
   ],
   "properties": {
     "author": {
@@ -38,6 +39,11 @@
     }
   },
   "validations": [],
+  "scope": {
+    "order": "publishedAt DESC",
+    "limit": 20,
+    "include": {"sources": "types"}
+  },
   "relations": {
     "sources": {
       "type": "belongsTo",

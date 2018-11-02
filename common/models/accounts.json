@@ -14,5 +14,6 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {}
+  "methods": {},
+  "hidden": ["id"]
 }
