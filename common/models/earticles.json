@@ -9,6 +9,16 @@
     "sourcesId",
     "id"
   ],
+  "scope": {
+    "order": "publishedAt DESC",
+    "limit": 20,
+    "include": {
+      "sources": "types"
+    },
+    "where": {
+      "deleted": false
+    }
+  },
   "properties": {
     "author": {
       "type": "string"
@@ -39,11 +49,6 @@
     }
   },
   "validations": [],
-  "scope": {
-    "order": "publishedAt DESC",
-    "limit": 20,
-    "include": {"sources": "types"}
-  },
   "relations": {
     "sources": {
       "type": "belongsTo",

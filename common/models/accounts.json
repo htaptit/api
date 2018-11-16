@@ -6,6 +6,9 @@
     "validateUpsert": true,
     "emailVerificationRequired": true
   },
+  "hidden": [
+    "id"
+  ],
   "properties": {
     "profile_image_url": {
       "type": "string"
@@ -14,6 +17,5 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {},
-  "hidden": ["id"]
+  "methods": {}
 }

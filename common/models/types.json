@@ -5,6 +5,12 @@
   "options": {
     "validateUpsert": true
   },
+  "hidden": [
+    "id"
+  ],
+  "scope": {
+    "include": "sources"
+  },
   "properties": {
     "name": {
       "type": "string",
@@ -17,8 +23,7 @@
       "type": "hasMany",
       "model": "sources",
       "foreignKey": "",
-      "options": {
-      }
+      "options": {}
     }
   },
   "acls": [
@@ -29,6 +34,5 @@
       "permission": "DENY"
     }
   ],
-  "methods": {},
-  "hidden": ["id"]
+  "methods": {}
 }
