@@ -8,6 +8,9 @@ module.exports = function(app) {
    * https://loopback.io/doc/en/lb3/Working-with-LoopBack-objects.html
    * for more info.
    */
+
+   return;
+   
    app.datasources.ww_db.isActual('earticles', function(err, actual) {
    	if (actual) {
       app.datasources.ww_db.autoupdate('earticles', function(err){

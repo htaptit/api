@@ -4,7 +4,8 @@
   "idInjection": true,
   "options": {
     "validateUpsert": true,
-    "emailVerificationRequired": true
+    "emailVerificationRequired": true,
+    "ttl": 28800
   },
   "hidden": [
     "id"

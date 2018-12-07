@@ -22,7 +22,7 @@
   },
   "AccessToken": {
     "dataSource": "ww_db",
-    "public": false
+    "public": true
   },
   "ACL": {
     "dataSource": "ww_db",
