@@ -1,42 +1,98 @@
 {
-  "name": "wordwide",
-  "version": "1.0.0",
-  "main": "server/server.js",
-  "engines": {
-    "node": ">=4"
+  "_from": "nodebb-plugin-s3-uploads-updated",
+  "_id": "nodebb-plugin-s3-uploads-updated@0.3.15",
+  "_inBundle": false,
+  "_integrity": "sha1-BZ95HoVCUsewFviXkhbO7KIVcuM=",
+  "_location": "/nodebb-plugin-s3-uploads-updated",
+  "_phantomChildren": {
+    "aws4": "1.8.0",
+    "bl": "1.0.3",
+    "chalk": "1.1.3",
+    "combined-stream": "1.0.8",
+    "commander": "2.20.0",
+    "extend": "3.0.2",
+    "forever-agent": "0.6.1",
+    "hawk": "3.1.3",
+    "is-my-json-valid": "2.20.0",
+    "is-typedarray": "1.0.0",
+    "isstream": "0.1.2",
+    "json-stringify-safe": "5.0.1",
+    "jsprim": "1.4.1",
+    "lodash": "4.17.11",
+    "mime-types": "2.1.24",
+    "pinkie-promise": "2.0.1",
+    "sshpk": "1.16.1",
+    "stringstream": "0.0.6"
   },
-  "scripts": {
-    "lint": "eslint .",
-    "start": "node .",
-    "posttest": "npm run lint"
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "nodebb-plugin-s3-uploads-updated",
+    "name": "nodebb-plugin-s3-uploads-updated",
+    "escapedName": "nodebb-plugin-s3-uploads-updated",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nodebb-plugin-s3-uploads-updated/-/nodebb-plugin-s3-uploads-updated-0.3.15.tgz",
+  "_shasum": "059f791e854252c7b016f8979216ceeca21572e3",
+  "_spec": "nodebb-plugin-s3-uploads-updated",
+  "_where": "/Users/hoangtronganh/test",
+  "author": {
+    "name": "Micheil Smith",
+    "email": "micheil@kano.me"
+  },
+  "bugs": {
+    "url": "https://github.com/louiseMcMahon/nodebb-plugin-s3-uploads/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Barış Soner Uşaklı",
+      "email": "barisusakli@gmail.com"
+    },
+    {
+      "name": "Joseph Chen",
+      "email": "joseph.chen@gmail.com"
+    },
+    {
+      "name": "louise McMahon",
+      "email": "louise@louisemcmahon.co.uk"
+    }
+  ],
   "dependencies": {
-    "compression": "^1.0.3",
-    "cors": "^2.5.2",
-    "crypto": "^1.0.1",
-    "fb": "^2.0.0",
-    "helmet": "^3.10.0",
-    "ip": "^1.1.5",
-    "loopback": "^3.19.0",
-    "loopback-boot": "^2.6.5",
-    "loopback-component-explorer": "^6.0.0",
-    "loopback-connector-mysql": "^5.3.1",
-    "newsapi": "^2.4.0",
-    "node-cron": "^2.0.1",
-    "serve-favicon": "^2.0.1",
-    "sleep": "^5.2.3",
-    "strong-error-handler": "^3.0.0",
-    "system-sleep": "^1.3.6",
-    "twit": "^2.2.11"
+    "aws-sdk": "^2.0.23",
+    "gm": "~1.21.1",
+    "mime": "~1.2.11",
+    "request": "~2.69.0",
+    "uuid": "~1.4.1"
   },
-  "devDependencies": {
-    "eslint": "^3.17.1",
-    "eslint-config-loopback": "^8.0.0"
+  "deprecated": false,
+  "description": "A plugin for NodeBB to take file uploads and store them on S3 updated for 1.0",
+  "homepage": "https://github.com/louiseMcMahon/nodebb-plugin-s3-uploads#readme",
+  "keywords": [
+    "nodebb",
+    "s3",
+    "aws",
+    "plugin",
+    "uploads"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "nodebb-plugin-s3-uploads-updated",
+  "nbbpm": {
+    "compatibility": "^1.5.0"
   },
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "git+https://github.com/louiseMcMahon/nodebb-plugin-s3-uploads.git"
   },
-  "license": "UNLICENSED",
-  "description": "wordwide"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.3.15"
 }
